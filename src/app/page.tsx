@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Ellis Slater & The Night Shift | Official Website",
   description:
     "London punk rock band Ellis Slater & The Night Shift. New album All Is Fair in Love, War & The Mundane released Friday 18 September 2026. Music, live dates, videos and news.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const liveDates = [

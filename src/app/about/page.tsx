@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "About | Ellis Slater & The Night Shift",
   description:
     "About London punk rock band Ellis Slater & The Night Shift and their debut album All Is Fair in Love, War & The Mundane.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
