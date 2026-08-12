@@ -171,7 +171,7 @@ export default function Home() {
       <h1 className="sr-only">Ellis Slater &amp; The Night Shift</h1>
       <section className="relative min-h-svh overflow-hidden bg-black text-white">
         <Image
-          src="/band-hero.jpg"
+          src="/hero-loop-poster.jpg"
           alt="Ellis Slater & The Night Shift in a green room with guitars and a tiger-print sofa"
           fill
           priority
@@ -185,7 +185,8 @@ export default function Home() {
           loop
           playsInline
           controls={false}
-          poster="/band-hero.jpg"
+          preload="auto"
+          poster="/hero-loop-poster.jpg"
           aria-hidden="true"
         >
           <source src="/hero-loop.mp4" type="video/mp4" />
