@@ -6,7 +6,7 @@ import PastShows from "./components/PastShows";
 export const metadata: Metadata = {
   title: "Ellis Slater & The Night Shift | Official Website",
   description:
-    "London punk rock band Ellis Slater & The Night Shift. New album All Is Fair in Love, War & The Mundane coming October 2026. Music, live dates, videos and news.",
+    "London punk rock band Ellis Slater & The Night Shift. New album All Is Fair in Love, War & The Mundane released Friday 18 September 2026. Music, live dates, videos and news.",
 };
 
 const liveDates = [
@@ -265,7 +265,7 @@ export default function Home() {
               <p className="mt-2 max-w-none whitespace-nowrap text-[0.64rem] leading-tight text-accent sm:text-xs lg:text-sm">
                 All Is Fair In Love, War &amp; The Mundane
               </p>
-              <p className="mt-2">October 2026</p>
+              <p className="mt-2">Friday 18 September 2026</p>
             </div>
             <a
               href="#music"
@@ -353,7 +353,7 @@ export default function Home() {
                 All Is Fair In Love, War &amp; The Mundane
               </p>
               <p className="mt-4 font-album text-base font-bold uppercase tracking-[0.14em] text-white">
-                October 2026
+                Friday 18 September 2026
               </p>
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4">
                 {musicLinks.map((link) => (

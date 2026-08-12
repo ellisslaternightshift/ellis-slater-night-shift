@@ -77,9 +77,10 @@ export default function AboutPage() {
             <span className="font-album font-bold uppercase tracking-[0.06em]">
               All Is Fair in Love, War &amp; The Mundane
             </span>
-            , arrives in October 2026. It is not a grand statement. It is a
-            record about love, boredom, panic, work, friendship and trying to
-            stay human without making too much of a speech about it.
+            , is released on Friday 18 September 2026. It is not a grand
+            statement. It is a record about love, boredom, panic, work,
+            friendship and trying to stay human without making too much of a
+            speech about it.
           </p>
           <p>
             ES&amp;TNS are currently playing live dates around the UK while

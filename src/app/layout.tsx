@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Ellis Slater & The Night Shift",
   description:
-    "The official site for Ellis Slater & The Night Shift. New album October 2026.",
+    "The official site for Ellis Slater & The Night Shift. New album released Friday 18 September 2026.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
