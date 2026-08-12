@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
+import HeroSinglePlayer from "./components/HeroSinglePlayer";
 import PastShows from "./components/PastShows";
 
 export const metadata: Metadata = {
@@ -212,43 +213,47 @@ export default function Home() {
             ))}
           </nav>
 
-          <details className="group relative md:hidden">
-            <summary className="cursor-pointer list-none text-white/90 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-              Menu
-            </summary>
-            <nav
-              className="absolute right-0 mt-4 grid w-44 gap-4 bg-black/90 p-5 text-right text-base shadow-2xl"
-              aria-label="Mobile navigation"
-            >
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </details>
         </header>
 
-        <div className="absolute left-4 top-[3.5rem] z-10 sm:left-6 sm:top-[4.5rem] lg:left-10 lg:top-[4.25rem]">
+        <details className="group absolute right-5 top-7 z-30 font-display text-sm font-black uppercase text-white md:hidden">
+          <summary className="cursor-pointer list-none text-white/90 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+            Menu
+          </summary>
+          <nav
+            className="absolute right-0 mt-4 grid w-44 gap-4 bg-black/90 p-5 text-right text-base shadow-2xl"
+            aria-label="Mobile navigation"
+          >
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </details>
+
+        <div className="hero-social-position absolute left-1/2 top-14 z-20 sm:top-7">
+          <div className="hero-enter hero-enter-social flex items-center gap-4 text-white sm:gap-5">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={link.label}
+                className="scale-105 transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:scale-110"
+              >
+                <SocialIcon icon={link.icon} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute left-4 top-24 z-10 sm:left-6 sm:top-[4.5rem] lg:left-10 lg:top-[4.25rem]">
           <div className="w-[48vw] max-w-[16rem] text-shadow-strong sm:w-[33vw] sm:max-w-[20rem] lg:w-[26vw] lg:max-w-[28rem]">
-            <div className="hero-enter hero-enter-social mb-4 flex items-center gap-4 text-white">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={link.label}
-                  className="transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-                >
-                  <SocialIcon icon={link.icon} />
-                </a>
-              ))}
-            </div>
             <div className="hero-logo-shine hero-enter hero-enter-logo">
               <Image
                 src="/GOLD LOGO.png"
@@ -267,12 +272,7 @@ export default function Home() {
               </p>
               <p className="mt-2">Friday 18 September 2026</p>
             </div>
-            <a
-              href="#music"
-              className="hero-enter hero-enter-cta mt-5 inline-block font-display text-base font-black uppercase text-white underline decoration-white/35 underline-offset-8 transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              Listen
-            </a>
+            <HeroSinglePlayer />
           </div>
         </div>
       </section>
