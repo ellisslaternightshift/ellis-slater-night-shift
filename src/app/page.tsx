@@ -280,7 +280,7 @@ export default function Home() {
         <section
           id="live"
           aria-labelledby="live-dates-heading"
-          className="scroll-reveal grid gap-10 scroll-mt-8 lg:grid-cols-[0.42fr_1fr]"
+          className="scroll-reveal grid gap-10 lg:grid-cols-[0.42fr_1fr]"
         >
           <div>
             <h2
@@ -327,7 +327,7 @@ export default function Home() {
         <section
           id="music"
           aria-labelledby="music-heading"
-          className="scroll-reveal mt-20 grid gap-10 scroll-mt-8 lg:grid-cols-[0.34fr_1fr]"
+          className="scroll-reveal mt-20 grid gap-10 lg:grid-cols-[0.34fr_1fr]"
         >
           <h2
             id="music-heading"
@@ -348,7 +348,7 @@ export default function Home() {
               <p className="font-album text-sm font-bold uppercase tracking-[0.18em] text-accent">
                 New album
               </p>
-              <p className="mt-3 max-w-none whitespace-nowrap font-album text-[1rem] font-bold uppercase leading-snug tracking-[0.04em] text-white sm:text-2xl lg:text-3xl">
+              <p className="mt-3 max-w-full whitespace-nowrap font-album text-[clamp(0.55rem,2.7vw,1rem)] font-bold uppercase leading-snug tracking-[0.04em] text-white sm:text-2xl lg:text-3xl">
                 All Is Fair In Love, War &amp; The Mundane
               </p>
               <p className="mt-4 font-album text-base font-bold uppercase tracking-[0.14em] text-white">
@@ -374,7 +374,7 @@ export default function Home() {
         <section
           id="video"
           aria-labelledby="video-heading"
-          className="scroll-reveal mt-20 grid gap-10 scroll-mt-8 lg:grid-cols-[0.42fr_1fr]"
+          className="scroll-reveal mt-20 grid gap-10 lg:grid-cols-[0.42fr_1fr]"
         >
           <h2
             id="video-heading"
@@ -420,7 +420,7 @@ export default function Home() {
         <section
           id="contact"
           aria-labelledby="contact-heading"
-          className="scroll-reveal mt-20 grid gap-5 scroll-mt-8 lg:grid-cols-[0.34fr_1fr] lg:items-end"
+          className="scroll-reveal mt-20 grid gap-5 lg:grid-cols-[0.34fr_1fr] lg:items-end"
         >
           <h2
             id="contact-heading"
