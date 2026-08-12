@@ -1,26 +1,247 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #090908;
+  --foreground: #f4f1ea;
+  --muted: #a29a8b;
+  --accent: #d7c769;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --font-sans: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  --font-display: "Arial Black", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  --font-album: Cinzel, "Trajan Pro", "Times New Roman", Times, serif;
+  --font-mono: "Courier New", Courier, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.text-shadow-strong {
+  text-shadow: 0 2px 18px rgb(0 0 0 / 0.55), 0 1px 2px rgb(0 0 0 / 0.7);
+}
+
+.hero-logo-shine {
+  position: relative;
+  filter: drop-shadow(0 0 0.75rem rgb(215 199 105 / 0.12));
+}
+
+.hero-logo-image {
+  animation: logo-glint 3.1s ease-in-out 3.45s infinite;
+}
+
+.hero-enter {
+  opacity: 0;
+  animation-duration: 1.65s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.17, 0.92, 0.23, 1.2);
+}
+
+.hero-enter-nav {
+  animation-name: enter-from-top;
+  animation-delay: 0.15s;
+}
+
+.hero-enter-social {
+  animation-name: enter-from-left;
+  animation-delay: 0.65s;
+}
+
+.hero-enter-logo {
+  animation-name: logo-hit;
+  animation-delay: 1.2s;
+}
+
+.hero-enter-copy {
+  animation-name: enter-from-bottom;
+  animation-delay: 2.15s;
+}
+
+.hero-enter-cta {
+  animation-name: enter-from-bottom;
+  animation-delay: 2.65s;
+}
+
+.scroll-reveal {
+  animation: section-rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.scroll-swing {
+  animation: swing-from-right 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+.hero-scratch-filter {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.42;
+  mix-blend-mode: overlay;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1.25 0 0 0 -0.12 0 1.25 0 0 -0.12 0 0 1.25 0 -0.12 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+    linear-gradient(90deg, rgb(0 0 0 / 0.34), transparent 7%, transparent 93%, rgb(0 0 0 / 0.34)),
+    repeating-linear-gradient(90deg, transparent 0 14px, rgb(255 255 255 / 0.08) 14px 15px, transparent 15px 38px);
+  background-size: 140px 140px, 100% 100%, 100% 100%;
+  animation: film-grain 0.75s steps(4, end) infinite;
+}
+
+@keyframes logo-glint {
+  0%,
+  100% {
+    filter: brightness(1) contrast(1) drop-shadow(0 0 0 rgb(215 199 105 / 0));
+  }
+
+  52% {
+    filter: brightness(1.2) contrast(1.06) drop-shadow(0 0 0.7rem rgb(215 199 105 / 0.28));
+  }
+
+  74% {
+    filter: brightness(1.08) contrast(1.03) drop-shadow(0 0 0.35rem rgb(215 199 105 / 0.16));
+  }
+}
+
+@keyframes enter-from-top {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -1.4rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes enter-from-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-3rem, 0.6rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes enter-from-bottom {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2.5rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes logo-hit {
+  0% {
+    opacity: 0;
+    transform: translate3d(42vw, 1rem, 0) scale(0.92) rotate(1.5deg);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate3d(-0.35rem, -0.15rem, 0) scale(1.035) rotate(-0.35deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0);
+  }
+}
+
+@keyframes section-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 5rem, 0) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes swing-from-right {
+  from {
+    opacity: 0;
+    transform: translate3d(9rem, 1.2rem, 0) rotate(4deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+
+@keyframes film-grain {
+  0% {
+    transform: translate3d(0, 0, 0);
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  25% {
+    transform: translate3d(-0.4px, 0.4px, 0);
+    background-position: 44px -28px, 0 0, 1px 0;
+  }
+
+  50% {
+    transform: translate3d(0.5px, -0.2px, 0);
+    background-position: -18px 52px, 0 0, -1px 0;
+  }
+
+  75% {
+    transform: translate3d(-0.2px, -0.5px, 0);
+    background-position: 61px 21px, 0 0, 1px 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    background-position: 0 0, 0 0, 0 0;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-reveal {
+    animation-duration: 1ms;
+    animation-timeline: view();
+    animation-range: entry 15% cover 42%;
+  }
+
+  .scroll-swing {
+    animation-duration: 1ms;
+    animation-delay: 0ms;
+    animation-timeline: view();
+    animation-range: entry 22% cover 48%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter,
+  .hero-logo-image,
+  .scroll-swing,
+  .scroll-reveal {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+
+  .hero-scratch-filter {
+    animation: none;
+  }
 }
