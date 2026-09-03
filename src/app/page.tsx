@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import HeroSinglePlayer from "./components/HeroSinglePlayer";
 import PastShows from "./components/PastShows";
+import SingleAudioCard from "./components/SingleAudioCard";
 
 export const metadata: Metadata = {
   title: "Ellis Slater & The Night Shift | Official Website",
@@ -422,51 +423,12 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {singles.map((single) => (
-              <article
+              <SingleAudioCard
                 key={single.title}
-                className="grid gap-4 border border-white/15 bg-black p-5 shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.04)] sm:grid-cols-[7rem_minmax(0,1fr)] sm:p-6"
-              >
-                <Image
-                  src={single.artwork}
-                  alt={`Artwork for ${single.title}`}
-                  width={3000}
-                  height={3000}
-                  sizes="(max-width: 640px) 86vw, 7rem"
-                  className="aspect-square w-full max-w-44 object-cover sm:max-w-none"
-                />
-                <div className="min-w-0">
-                  <p className="font-display text-xs font-black uppercase text-accent">
-                    {single.label}
-                  </p>
-                  <h3 className="mt-2 font-display text-2xl font-black uppercase leading-tight text-white">
-                    {single.title}
-                  </h3>
-                  <p className="mt-2 font-album text-xs font-bold uppercase tracking-[0.12em] text-muted">
-                    {single.date}
-                  </p>
-                  <audio
-                    className="site-audio mt-4 w-full"
-                    controls
-                    preload="metadata"
-                    src={single.audio}
-                  >
-                    <a href={single.audio}>Listen to {single.title}</a>
-                  </audio>
-                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
-                    {single.links.map((link) => (
-                      <a
-                        key={`${single.title}-${link.label}`}
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-display text-sm font-black uppercase text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-                      >
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </article>
+                {...single}
+                className="border border-white/15 bg-black p-5 shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.04)] sm:p-6"
+                artworkClassName="h-20 w-20 sm:h-28 sm:w-28"
+              />
             ))}
           </div>
         </section>

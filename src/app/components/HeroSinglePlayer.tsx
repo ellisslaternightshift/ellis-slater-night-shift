@@ -1,53 +1,52 @@
-import Image from "next/image";
+import SingleAudioCard from "./SingleAudioCard";
+
+const heroSingles = [
+  {
+    title: "Skulls & Skeletons",
+    label: "New single",
+    date: "Out 4 Sep 2026",
+    artwork: "/skulls-and-skeletons-cover.png",
+    audio: "/skulls-and-skeletons.mp3",
+    links: [
+      {
+        label: "Watch video",
+        href: "https://youtu.be/UuWZ-kESyGI",
+      },
+    ],
+  },
+  {
+    title: "Graveyard of High Flyers",
+    label: "Previous single",
+    date: "Out now",
+    artwork: "/DIGITAL_Single Cover_Graveyards.png",
+    audio: "/graveyard-of-high-flyers.mp3",
+    links: [
+      {
+        label: "Watch video",
+        href: "https://youtu.be/wUg2TV19L6Q",
+      },
+    ],
+  },
+];
 
 export default function HeroSinglePlayer() {
   return (
-    <div className="hero-enter hero-enter-cta mt-7 max-w-xs text-white">
-      <div className="flex items-center gap-3 text-left">
-        <Image
-          src="/skulls-and-skeletons-cover.png"
-          alt="Artwork for Skulls & Skeletons"
-          width={3000}
-          height={3000}
-          sizes="4rem"
-          className="h-16 w-16 shrink-0 object-cover shadow-2xl"
+    <div className="hero-enter hero-enter-cta mt-7 grid max-w-xs gap-5 text-white">
+      {heroSingles.map((single) => (
+        <SingleAudioCard
+          key={single.title}
+          {...single}
+          compact
+          className="text-shadow-strong"
+          artworkClassName="h-16 w-16"
         />
-        <span className="grid gap-1">
-          <span className="font-display text-xs font-black uppercase text-white">
-            New single
-          </span>
-          <span className="font-album text-xs font-bold uppercase leading-tight tracking-[0.08em] text-accent">
-            Skulls &amp; Skeletons
-          </span>
-          <span className="font-display text-xs font-black uppercase text-muted">
-            Out 4 Sep 2026
-          </span>
-        </span>
-      </div>
-      <audio
-        className="site-audio mt-4 w-full"
-        controls
-        preload="metadata"
-        src="/skulls-and-skeletons.mp3"
+      ))}
+      <a
+        href="#music"
+        className="w-fit font-display text-sm font-black uppercase text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
       >
-        <a href="/skulls-and-skeletons.mp3">Listen to Skulls &amp; Skeletons</a>
-      </audio>
-      <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
-        <a
-          href="#music"
-          className="font-display text-sm font-black uppercase text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-        >
-          More music
-        </a>
-        <a
-          href="https://youtu.be/UuWZ-kESyGI"
-          target="_blank"
-          rel="noreferrer"
-          className="font-display text-sm font-black uppercase text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-        >
-          Watch video
-        </a>
-      </div>
+        More music
+      </a>
     </div>
   );
 }

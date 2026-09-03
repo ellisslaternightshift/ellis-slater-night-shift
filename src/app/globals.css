@@ -49,12 +49,6 @@ body {
   transform: translateX(-50%);
 }
 
-.site-audio {
-  display: block;
-  max-width: 100%;
-  accent-color: var(--accent);
-}
-
 .hero-enter {
   opacity: 0;
   animation-duration: 1.65s;
