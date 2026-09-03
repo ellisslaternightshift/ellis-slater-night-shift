@@ -54,8 +54,8 @@ const musicLinks = [
 const singles = [
   {
     title: "Skulls & Skeletons",
-    label: "New single",
-    date: "Out 4 September 2026",
+    label: "Out now",
+    date: "Released 4 September 2026",
     artwork: "/skulls-and-skeletons-cover.png",
     audio: "/skulls-and-skeletons.mp3",
     links: [
@@ -68,8 +68,8 @@ const singles = [
   },
   {
     title: "Graveyard of High Flyers",
-    label: "Previous single",
-    date: "Out now",
+    label: "Out now",
+    date: "Released 7 February 2025",
     artwork: "/DIGITAL_Single Cover_Graveyards.png",
     audio: "/graveyard-of-high-flyers.mp3",
     links: [

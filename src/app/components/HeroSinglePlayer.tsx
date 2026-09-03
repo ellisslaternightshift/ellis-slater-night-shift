@@ -3,8 +3,8 @@ import SingleAudioCard from "./SingleAudioCard";
 const heroSingles = [
   {
     title: "Skulls & Skeletons",
-    label: "New single",
-    date: "Out 4 Sep 2026",
+    label: "Out now",
+    date: "Released 4 Sep 2026",
     artwork: "/skulls-and-skeletons-cover.png",
     audio: "/skulls-and-skeletons.mp3",
     links: [
@@ -16,8 +16,8 @@ const heroSingles = [
   },
   {
     title: "Graveyard of High Flyers",
-    label: "Previous single",
-    date: "Out now",
+    label: "Out now",
+    date: "Released 7 Feb 2025",
     artwork: "/DIGITAL_Single Cover_Graveyards.png",
     audio: "/graveyard-of-high-flyers.mp3",
     links: [
