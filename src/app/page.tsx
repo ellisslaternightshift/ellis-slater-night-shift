@@ -24,6 +24,7 @@ const liveDates = [
     date: "02 Oct 2026",
     venue: "The Pig",
     location: "Hastings",
+    note: "With Bela Fool",
   },
   {
     date: "19 Oct 2026",
@@ -47,6 +48,37 @@ const musicLinks = [
     href: "https://open.spotify.com/artist/6xDMlAj0iL6ClWtse79zvk?si=WjFdC258SXWA95xTfmVv0Q&utm_source=copy-link",
   },
   { label: "Bandcamp", href: "https://ellisslaternightshift.bandcamp.com/" },
+];
+
+const singles = [
+  {
+    title: "Skulls & Skeletons",
+    label: "New single",
+    date: "Out 4 September 2026",
+    artwork: "/skulls-and-skeletons-cover.png",
+    audio: "/skulls-and-skeletons.mp3",
+    links: [
+      {
+        label: "Watch video",
+        href: "https://youtu.be/UuWZ-kESyGI",
+      },
+      ...musicLinks,
+    ],
+  },
+  {
+    title: "Graveyard of High Flyers",
+    label: "Previous single",
+    date: "Out now",
+    artwork: "/DIGITAL_Single Cover_Graveyards.png",
+    audio: "/graveyard-of-high-flyers.mp3",
+    links: [
+      {
+        label: "Watch video",
+        href: "https://youtu.be/wUg2TV19L6Q",
+      },
+      ...musicLinks,
+    ],
+  },
 ];
 
 const socialLinks = [
@@ -81,13 +113,13 @@ const videoLinks = [
   {
     title: "Skulls & Skeletons",
     series: "Rimshot Sessions",
-    status: "Premiere live now",
+    youtubeId: "UuWZ-kESyGI",
     href: "https://youtu.be/UuWZ-kESyGI",
   },
   {
-    title: "Graveyard Of High Flyers",
+    title: "Graveyard of High Flyers",
     series: "Rimshot Sessions",
-    status: "Out now",
+    youtubeId: "wUg2TV19L6Q",
     href: "https://youtu.be/wUg2TV19L6Q",
   },
 ];
@@ -371,7 +403,7 @@ export default function Home() {
                 All Is Fair In Love, War &amp; The Mundane
               </p>
               <p className="mt-4 font-album text-base font-bold uppercase tracking-[0.14em] text-white">
-                Friday 18 September 2026
+                Out 18 September 2026
               </p>
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4">
                 {musicLinks.map((link) => (
@@ -388,6 +420,55 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {singles.map((single) => (
+              <article
+                key={single.title}
+                className="grid gap-4 border border-white/15 bg-black p-5 shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.04)] sm:grid-cols-[7rem_minmax(0,1fr)] sm:p-6"
+              >
+                <Image
+                  src={single.artwork}
+                  alt={`Artwork for ${single.title}`}
+                  width={3000}
+                  height={3000}
+                  sizes="(max-width: 640px) 86vw, 7rem"
+                  className="aspect-square w-full max-w-44 object-cover sm:max-w-none"
+                />
+                <div className="min-w-0">
+                  <p className="font-display text-xs font-black uppercase text-accent">
+                    {single.label}
+                  </p>
+                  <h3 className="mt-2 font-display text-2xl font-black uppercase leading-tight text-white">
+                    {single.title}
+                  </h3>
+                  <p className="mt-2 font-album text-xs font-bold uppercase tracking-[0.12em] text-muted">
+                    {single.date}
+                  </p>
+                  <audio
+                    className="site-audio mt-4 w-full"
+                    controls
+                    preload="metadata"
+                    src={single.audio}
+                  >
+                    <a href={single.audio}>Listen to {single.title}</a>
+                  </audio>
+                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+                    {single.links.map((link) => (
+                      <a
+                        key={`${single.title}-${link.label}`}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-display text-sm font-black uppercase text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section
@@ -401,23 +482,42 @@ export default function Home() {
           >
             Video
           </h2>
-          <div className="grid max-w-3xl gap-4 sm:grid-cols-2">
+          <div className="grid max-w-5xl gap-6">
             {videoLinks.map((video) => (
-              <a
+              <article
                 key={video.href}
-                href={video.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex aspect-video items-end border border-white/15 bg-black p-5 shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.04)] transition-colors hover:border-accent/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:p-6"
+                className="border border-white/15 bg-black p-3 shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.04)] sm:p-4"
               >
-                <p className="font-display text-2xl font-black uppercase leading-tight text-white transition-colors group-hover:text-accent sm:text-3xl">
-                  {video.title}
-                  <span className="block pt-2 text-accent group-hover:text-white">
-                    {video.series}
-                  </span>
-                  <span className="block pt-2 text-muted">{video.status}</span>
-                </p>
-              </a>
+                <div className="aspect-video w-full overflow-hidden bg-black">
+                  <iframe
+                    className="h-full w-full"
+                    src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}`}
+                    title={`${video.title} - ${video.series}`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="flex flex-wrap items-end justify-between gap-3 px-1 pt-4">
+                  <div>
+                    <p className="font-display text-2xl font-black uppercase leading-tight text-white sm:text-3xl">
+                      {video.title}
+                    </p>
+                    <p className="pt-1 font-display text-base font-black uppercase text-accent">
+                      {video.series}
+                    </p>
+                  </div>
+                  <a
+                    href={video.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-display text-sm font-black uppercase text-muted transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                  >
+                    Watch on YouTube
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
         </section>
