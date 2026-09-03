@@ -5,8 +5,8 @@ import { useRef, useState } from "react";
 
 type SingleAudioCardProps = {
   title: string;
-  label: string;
-  date: string;
+  label?: string;
+  date?: string;
   artwork: string;
   audio: string;
   links?: {
@@ -70,19 +70,29 @@ export default function SingleAudioCard({
           className={`${artworkClassName} shrink-0 object-cover shadow-2xl`}
         />
         <span className="min-w-0 grow">
-          <span className="block font-display text-xs font-black uppercase text-white">
-            {label}
-          </span>
+          {label ? (
+            <span className="block font-display text-xs font-black uppercase text-white">
+              {label}
+            </span>
+          ) : null}
           <span
             className={`block font-album font-bold uppercase leading-tight tracking-[0.08em] text-accent ${
-              compact ? "mt-1 text-xs" : "mt-2 text-sm sm:text-base"
+              compact
+                ? label
+                  ? "mt-1 text-xs"
+                  : "text-xs"
+                : label
+                  ? "mt-2 text-sm sm:text-base"
+                  : "text-sm sm:text-base"
             }`}
           >
             {title}
           </span>
-          <span className="mt-1 block font-display text-xs font-black uppercase text-muted">
-            {date}
-          </span>
+          {date ? (
+            <span className="mt-1 block font-display text-xs font-black uppercase text-muted">
+              {date}
+            </span>
+          ) : null}
         </span>
         <span className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black transition-colors group-hover:bg-accent">
           {isPlaying ? (

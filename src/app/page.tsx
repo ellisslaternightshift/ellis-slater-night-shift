@@ -54,31 +54,13 @@ const musicLinks = [
 const singles = [
   {
     title: "Skulls & Skeletons",
-    label: "Out now",
-    date: "Released 4 September 2026",
     artwork: "/skulls-and-skeletons-cover.png",
     audio: "/skulls-and-skeletons.mp3",
-    links: [
-      {
-        label: "Watch video",
-        href: "https://youtu.be/UuWZ-kESyGI",
-      },
-      ...musicLinks,
-    ],
   },
   {
     title: "Graveyard of High Flyers",
-    label: "Out now",
-    date: "Released 7 February 2025",
     artwork: "/DIGITAL_Single Cover_Graveyards.png",
     audio: "/graveyard-of-high-flyers.mp3",
-    links: [
-      {
-        label: "Watch video",
-        href: "https://youtu.be/wUg2TV19L6Q",
-      },
-      ...musicLinks,
-    ],
   },
 ];
 
@@ -421,7 +403,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:col-start-2">
             {singles.map((single) => (
               <SingleAudioCard
                 key={single.title}
