@@ -77,6 +77,21 @@ const socialLinks = [
   },
 ];
 
+const videoLinks = [
+  {
+    title: "Skulls & Skeletons",
+    series: "Rimshot Sessions",
+    status: "Premiere live now",
+    href: "https://youtu.be/UuWZ-kESyGI",
+  },
+  {
+    title: "Graveyard Of High Flyers",
+    series: "Rimshot Sessions",
+    status: "Out now",
+    href: "https://youtu.be/wUg2TV19L6Q",
+  },
+];
+
 function SocialIcon({ icon }: { icon: string }) {
   if (icon === "instagram") {
     return (
@@ -386,12 +401,24 @@ export default function Home() {
           >
             Video
           </h2>
-          <div className="flex aspect-video max-w-3xl items-end border border-white/15 bg-black p-5 shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.04)] sm:p-8">
-            <p className="font-display text-2xl font-black uppercase leading-tight text-white sm:text-4xl">
-              Graveyard Of High Flyers
-              <span className="block pt-2 text-accent">Live session</span>
-              <span className="block pt-2 text-muted">Coming soon</span>
-            </p>
+          <div className="grid max-w-3xl gap-4 sm:grid-cols-2">
+            {videoLinks.map((video) => (
+              <a
+                key={video.href}
+                href={video.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex aspect-video items-end border border-white/15 bg-black p-5 shadow-[inset_0_0_0_1px_rgb(255_255_255_/_0.04)] transition-colors hover:border-accent/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:p-6"
+              >
+                <p className="font-display text-2xl font-black uppercase leading-tight text-white transition-colors group-hover:text-accent sm:text-3xl">
+                  {video.title}
+                  <span className="block pt-2 text-accent group-hover:text-white">
+                    {video.series}
+                  </span>
+                  <span className="block pt-2 text-muted">{video.status}</span>
+                </p>
+              </a>
+            ))}
           </div>
         </section>
 
