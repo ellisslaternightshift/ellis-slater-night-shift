@@ -46,7 +46,7 @@ const navItems = [
 const musicLinks = [
   {
     label: "Spotify",
-    href: "https://open.spotify.com/artist/6xDMlAj0iL6ClWtse79zvk?si=WjFdC258SXWA95xTfmVv0Q&utm_source=copy-link",
+    href: "https://open.spotify.com/artist/52ik1zGwgdg4wLWQDYTSen",
   },
   { label: "Bandcamp", href: "https://ellisslaternightshift.bandcamp.com/" },
 ];
@@ -83,7 +83,7 @@ const socialLinks = [
   {
     label: "Spotify",
     icon: "spotify",
-    href: "https://open.spotify.com/artist/6xDMlAj0iL6ClWtse79zvk?si=WjFdC258SXWA95xTfmVv0Q&utm_source=copy-link",
+    href: "https://open.spotify.com/artist/52ik1zGwgdg4wLWQDYTSen",
   },
   {
     label: "Bandcamp",
