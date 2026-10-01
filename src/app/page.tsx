@@ -8,19 +8,13 @@ import SingleAudioCard from "./components/SingleAudioCard";
 export const metadata: Metadata = {
   title: "Ellis Slater & The Night Shift | Official Website",
   description:
-    "London punk rock band Ellis Slater & The Night Shift. New album All Is Fair in Love, War & The Mundane released Friday 18 September 2026. Music, live dates, videos and news.",
+    "London punk rock band Ellis Slater & The Night Shift. New album All Is Fair in Love, War & The Mundane out now. Music, live dates, videos and news.",
   alternates: {
     canonical: "/",
   },
 };
 
 const liveDates = [
-  {
-    date: "18 Sep 2026",
-    venue: "Blondies",
-    location: "London, E5",
-    note: "With Cold Years",
-  },
   {
     date: "02 Oct 2026",
     venue: "The Pig",
@@ -94,16 +88,10 @@ const socialLinks = [
 
 const videoLinks = [
   {
-    title: "Skulls & Skeletons",
-    series: "Rimshot Sessions",
-    youtubeId: "UuWZ-kESyGI",
-    href: "https://youtu.be/UuWZ-kESyGI",
-  },
-  {
-    title: "Graveyard of High Flyers",
-    series: "Rimshot Sessions",
-    youtubeId: "wUg2TV19L6Q",
-    href: "https://youtu.be/wUg2TV19L6Q",
+    title: "Rimshot Sessions",
+    series: "Full Session",
+    youtubeId: "S9UZcT49TXA",
+    href: "https://youtu.be/S9UZcT49TXA?si=FLFBdHE5HNq72J7e",
   },
 ];
 
@@ -303,7 +291,7 @@ export default function Home() {
               <p className="mt-2 max-w-none whitespace-nowrap text-[0.64rem] leading-tight text-accent sm:text-xs lg:text-sm">
                 All Is Fair In Love, War &amp; The Mundane
               </p>
-              <p className="mt-2">Friday 18 September 2026</p>
+              <p className="mt-2">Out now</p>
             </div>
             <HeroSinglePlayer />
           </div>
@@ -386,7 +374,7 @@ export default function Home() {
                 All Is Fair In Love, War &amp; The Mundane
               </p>
               <p className="mt-4 font-album text-base font-bold uppercase tracking-[0.14em] text-white">
-                Out 18 September 2026
+                Out now
               </p>
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-4">
                 {musicLinks.map((link) => (

@@ -5,6 +5,16 @@ import { useEffect, useState } from "react";
 
 const pastShows = [
   {
+    date: "18 Sep 2026",
+    venue: "Blondies",
+    location: "London, E5",
+    note: "With Cold Years",
+    poster: "/blondies-cold-years.jpg",
+    posterAlt: "Poster for Ellis Slater & The Night Shift at Blondies with Cold Years",
+    width: 1280,
+    height: 1600,
+  },
+  {
     date: "16 Jul 2026",
     venue: "Saint Monday Brewery",
     location: "London, E8",
