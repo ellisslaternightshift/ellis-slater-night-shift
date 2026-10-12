@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 const pastShows = [
   {
@@ -134,7 +135,7 @@ export default function PastShows() {
         </div>
       </details>
 
-      {activePoster ? (
+      {activePoster ? createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-5"
           role="dialog"
@@ -160,7 +161,8 @@ export default function PastShows() {
               onClick={(event) => event.stopPropagation()}
             />
           </div>
-        </div>
+        </div>,
+        document.body,
       ) : null}
     </section>
   );
