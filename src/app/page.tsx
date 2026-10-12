@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import HeroSinglePlayer from "./components/HeroSinglePlayer";
 import PastShows from "./components/PastShows";
@@ -13,21 +12,6 @@ export const metadata: Metadata = {
     canonical: "/",
   },
 };
-
-const liveDates = [
-  {
-    date: "02 Oct 2026",
-    venue: "The Pig",
-    location: "Hastings",
-    note: "With Bela Fool",
-  },
-  {
-    date: "19 Oct 2026",
-    venue: "Signature Brew Haggerston",
-    location: "London, E8",
-    note: "With Tribute To Nothing",
-  },
-];
 
 const navItems = [
   { label: "Music", href: "#music" },
@@ -317,30 +301,23 @@ export default function Home() {
           </div>
 
           <div className="divide-y divide-white/12 border-y border-white/12">
-            {liveDates.map((show, index) => (
-              <article
-                key={`${show.date}-${show.location}`}
-                className="scroll-swing grid gap-3 py-6 sm:grid-cols-[8.5rem_1fr] sm:items-start"
-                style={{ "--reveal-delay": `${index * 120}ms` } as CSSProperties}
+            <div className="scroll-swing py-6">
+              <h3 className="font-display text-2xl font-black uppercase leading-tight text-white">
+                More shows soon.
+              </h3>
+              <p className="mt-2 font-display text-base font-black uppercase text-muted">
+                Check back soon for new dates.
+              </p>
+              <p className="mt-6 font-display text-base font-black uppercase text-muted">
+                Want to book us?
+              </p>
+              <a
+                href="mailto:ellisslaternightshift@gmail.com"
+                className="mt-1 inline-block break-all text-sm font-bold text-accent transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
-                <time className="font-display text-base font-black uppercase text-accent sm:pt-1">
-                  {show.date}
-                </time>
-                <div>
-                  <h3 className="font-display text-2xl font-black uppercase leading-tight text-white">
-                    {show.location}
-                  </h3>
-                  <p className="mt-2 font-display text-base font-black uppercase text-muted">
-                    {show.venue}
-                  </p>
-                  {show.note ? (
-                    <p className="mt-1 text-sm font-bold uppercase italic text-muted">
-                      {show.note}
-                    </p>
-                  ) : null}
-                </div>
-              </article>
-            ))}
+                ellisslaternightshift@gmail.com
+              </a>
+            </div>
           </div>
         </section>
 
