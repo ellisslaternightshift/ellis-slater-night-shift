@@ -5,6 +5,16 @@ import { useEffect, useState } from "react";
 
 const pastShows = [
   {
+    date: "02 Oct 2026",
+    venue: "The Pig",
+    location: "Hastings",
+    note: "With Bela Fool",
+    poster: "/the-pig-bela-fool.jpg",
+    posterAlt: "Poster for Ellis Slater & The Night Shift at The Pig with Bela Fool",
+    width: 1131,
+    height: 1600,
+  },
+  {
     date: "18 Sep 2026",
     venue: "Blondies",
     location: "London, E5",
